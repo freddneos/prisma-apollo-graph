@@ -1,8 +1,7 @@
 import { createServer } from "http";
 import express from "express";
 import { ApolloServer, gql } from "apollo-server-express";
-import { start } from "repl";
-
+import { prisma } from "../src/prisma/client";
 /**
  * Create an asynchronous function to start the server.
  * At the end of the code, you can see the
