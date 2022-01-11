@@ -4,3 +4,6 @@
 # in the Heroku app called NPM_CONFIG_PRODUCTION=false. 
 # Go to the Settings tab and add a Config Vars:
 web: npm start
+
+# run the migrations onm heroku
+release: npx prisma migrate deploy
