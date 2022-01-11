@@ -30,6 +30,16 @@ const startServer = async () => {
     type Query {
       hello: String
     }
+    type Query {
+      boards: [Board]
+    }
+
+    type Board {
+      id: ID!
+      title: String!
+      description: String
+      path: String!
+    }
   `;
 
   /**
@@ -45,6 +55,9 @@ const startServer = async () => {
   const resolvers = {
     Query: {
       hello: () => "Hello world!",
+      boards: () => {
+        return prisma.board.findMany();
+      },
     },
   };
 
